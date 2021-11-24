@@ -1,0 +1,19 @@
+const { Model, DataTypes } = require('sequelize');
+
+class Users extends Model {
+    static init(sequelize) {
+        super.init({
+            usr_nome: DataTypes.STRING,
+            usr_cpf: DataTypes.STRING,
+            usr_telefone: DataTypes.STRING,
+            usr_email: DataTypes.STRING,
+            usr_password: DataTypes.STRING
+        }, {
+            sequelize,
+            tableName: 'Users'
+        })
+        return this;
+    }
+}
+
+module.exports = Users;
