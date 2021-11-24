@@ -8,7 +8,7 @@ module.exports = {
     },
 
     async store(req, res){
-        const { usr_nome, usr_cpf, usr_telefone, usr_email, usr_password } = req_body;
+        const { usr_nome, usr_cpf, usr_telefone, usr_email, usr_password } = req.body;
         const user = await Users.create({usr_nome, usr_cpf, usr_telefone, usr_email, usr_password});
         return res.status(200).send({
             status: 1,

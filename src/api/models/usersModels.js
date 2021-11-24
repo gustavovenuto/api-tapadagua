@@ -10,8 +10,9 @@ class Users extends Model {
             usr_password: DataTypes.STRING
         }, {
             sequelize,
-            tableName: 'Users'
-        })
+            tableName: 'users'
+        }
+        );
         return this;
     }
 }
