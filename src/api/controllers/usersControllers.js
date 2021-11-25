@@ -8,17 +8,23 @@ module.exports = {
     },
 
     async store(req, res){
+        try {
         const { usr_nome, usr_cpf, usr_telefone, usr_email, usr_password } = req.body;
+        console.log(req.body);
         const user = await Users.create({usr_nome, usr_cpf, usr_telefone, usr_email, usr_password});
         return res.status(200).send({
             status: 1,
             message: "Usuario cadastrado com sucesso !!!",
             user
         })
+        } catch(e){
+            console.log('teste');
+            console.log(e);
+        }
     },
 
     async update(req, res){
-        const { usr_nome, usr_cpf, usr_telefone, usr_email, usr_password } = req_body;
+        const { usr_nome, usr_cpf, usr_telefone, usr_email, usr_password } = req.body;
         const { codigo } = req.params;
 
         await Users.update({

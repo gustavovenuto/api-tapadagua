@@ -1,4 +1,4 @@
-const Enderecos = require('../models/enderecosModels');
+const Enderecos = require('../models/enderecosModels.js');
 
 module.exports = {
     async index(req, res){
@@ -18,7 +18,7 @@ module.exports = {
     },
 
     async update(req, res){
-        const { nroProtocolo, statusDen, dtDenuncia, observacao } = req_body;
+        const { nroProtocolo, statusDen, dtDenuncia, observacao } = req.body;
         const { codigo } = req.params;
 
         await Enderecos.update({

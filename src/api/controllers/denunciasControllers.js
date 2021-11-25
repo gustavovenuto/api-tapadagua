@@ -1,4 +1,4 @@
-const Denuncias = require('../models/denunciasModels');
+const Denuncias = require('../models/denunciasModels.js');
 
 module.exports = {
     async index(req, res){
@@ -18,7 +18,7 @@ module.exports = {
     },
 
     async update(req, res){
-        const { rua, numero, bairro, cidade, cep, pontoReferencia } = req_body;
+        const { rua, numero, bairro, cidade, cep, pontoReferencia } = req.body;
         const { codigo } = req.params;
 
         await Denuncias.update({

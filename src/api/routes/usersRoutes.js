@@ -7,7 +7,7 @@ router.get('/users', usersControllers.index);
 
 router.post('/users', usersControllers.store);
 
-router.put('/user/:codigo', usersControllers.update);
+router.put('/users/:codigo', usersControllers.update);
 
 router.delete('/users/:codigo', usersControllers.delete);
 
