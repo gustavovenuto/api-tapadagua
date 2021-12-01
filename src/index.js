@@ -10,6 +10,7 @@ const routesDenuncias = require('./api/routes/denunciasRouter');
 const routesEmpresaResponsavel = require('./api/routes/empresaResponsavelRouter');
 const routesAveriguacao = require('./api/routes/averiguacaoRouter');
 const routesReparo = require('./api/routes/reparoRouter');
+const buscaCep = require('./api/routes/buscaCepRouter');
 
 const { O_NOATIME } = require('constants');
 
@@ -25,6 +26,7 @@ app.use(routesDenuncias);
 app.use(routesEmpresaResponsavel);
 app.use(routesAveriguacao);
 app.use(routesReparo);
+app.use(buscaCep);
 
 http.createServer(app).listen(app.get('porta'), function(){
     console.log('servidor Rodando em ' + app.get('url') + app.get('porta'));
